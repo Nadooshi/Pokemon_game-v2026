@@ -536,7 +536,7 @@ global.popup_appeared = undefined;
 
 //////////////////////////////////
 
-global.trainer_preset = undefined;
+global.trainer_preset = ds_map_create();
 trainer_preset[? "avatar"]	= irandom(sprite_get_number(sp_trainer_avatar))   // image_index from sp_trainer_avatar
 
 global.current_trainer = undefined;
