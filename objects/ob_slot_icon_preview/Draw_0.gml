@@ -3,7 +3,7 @@
 draw_self()
 
 if show_hint
-if hint != "" {
+if string_length(hint) > 0 {
 	draw_set_font(fn_card)
 	draw_set_color(c_black)
 	draw_text(mouse_x + 26, mouse_y - 46, hint)

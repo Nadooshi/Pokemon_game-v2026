@@ -5,8 +5,8 @@ function sc_load_trainer_fnames_old() {
 		directory_create("trainer_saves");
 
 	var fn = file_find_first("trainer_saves/*.ini", 0);
-	while (fn != "") {
-		trainer_fnames[trainer_count] = string_substring(fn, 0, string_pos(".", fn) - 1);
+	while (string_length(fn) > 0) {
+		trainer_fnames[trainer_count] = string_substring(fn, 0, string_pos_ext(".", fn, 0) - 1);
 		trainer_count++;
 		fn = file_find_next();
 	}
@@ -20,7 +20,7 @@ function sc_load_trainer_fnames() {
 		directory_create("trainer_saves");
 
 	var fn = file_find_first("trainer_saves/*.txt", 0);
-	while (fn != "") {
+	while (string_length(fn) > 0) {
 		trainer_fnames[trainer_count] = string_substring(fn, 0, string_pos_ext(".", fn, 0) - 1);
 		trainer_count++;
 		fn = file_find_next();
