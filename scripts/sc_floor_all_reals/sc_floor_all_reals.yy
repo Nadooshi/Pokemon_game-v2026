@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sc_floor_all_reals",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sc_floor_all_reals",
+  "parent":{
+    "name":"internal",
+    "path":"folders/Scripts/internal.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

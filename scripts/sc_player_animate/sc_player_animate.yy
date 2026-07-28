@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sc_player_animate",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sc_player_animate",
+  "parent":{
+    "name":"player",
+    "path":"folders/Scripts/battle/player.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

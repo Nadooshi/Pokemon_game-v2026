@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sc_composed_add_component",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sc_composed_add_component",
+  "parent":{
+    "name":"internal",
+    "path":"folders/Scripts/internal.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sc_find_in_array",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sc_find_in_array",
+  "parent":{
+    "name":"internal",
+    "path":"folders/Scripts/internal.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

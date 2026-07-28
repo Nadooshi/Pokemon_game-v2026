@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sc_new_trainer",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sc_new_trainer",
+  "parent":{
+    "name":"pokemon",
+    "path":"folders/Scripts/pokemon.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

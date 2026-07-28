@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sc_copy_action",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sc_copy_action",
+  "parent":{
+    "name":"pokemon",
+    "path":"folders/Scripts/pokemon.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

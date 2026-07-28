@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sc_refresh_screen_filter",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sc_refresh_screen_filter",
+  "parent":{
+    "name":"Weather",
+    "path":"folders/Scripts/Weather.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

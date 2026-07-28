@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"ref_write",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ref_write",
+  "parent":{
+    "name":"internal",
+    "path":"folders/Scripts/internal.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

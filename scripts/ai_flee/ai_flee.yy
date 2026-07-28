@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"ai_flee",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ai_flee",
+  "parent":{
+    "name":"ai",
+    "path":"folders/Scripts/battle/player/ai.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

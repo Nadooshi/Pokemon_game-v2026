@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sc_add_slot_caught_pokemon",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sc_add_slot_caught_pokemon",
+  "parent":{
+    "name":"ui",
+    "path":"folders/Scripts/ui.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

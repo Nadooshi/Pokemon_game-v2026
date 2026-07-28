@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sc_check_reaching_target",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sc_check_reaching_target",
+  "parent":{
+    "name":"ai",
+    "path":"folders/Scripts/battle/player/ai.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

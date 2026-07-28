@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sc_player_attack_wait_anim",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sc_player_attack_wait_anim",
+  "parent":{
+    "name":"player",
+    "path":"folders/Scripts/battle/player.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

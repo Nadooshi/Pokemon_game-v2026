@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sc_lvlup_pokemon",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sc_lvlup_pokemon",
+  "parent":{
+    "name":"endbattle",
+    "path":"folders/Scripts/endbattle.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

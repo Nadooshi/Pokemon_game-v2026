@@ -1,0 +1,133 @@
+09.08.19
+	Import "power" sprites from pokemon editor project < Done >
+
+21.10.19
+	for cmp_selectable :  make it more universal. not only for hardcoded objects (ob_player,..)
+	[		]
+
+
+22.10.19
+	Сделать более менее наглядную систему переходов анимаций с указанием необходимых флагов состояния
+	(2d массив, map...) для автоматизированного переключения анимаций
+	canMove. canShoot
+		move_set -> move
+		...
+		
+04.06.20
+	In ds_map_copy(action, action) ability it contains isn't being copied! After CleanUp event of one object,
+ability in copied action of other objects is destroyed... This causes a crash
+
+15.06.20
+	Damage area must save ids of all damaged pokemons to deal damage to them just once
+	
+23.08.20
+	* Летающие покемоны () не попадают по летающим покемонам
+	* Лазер не рисуется если он попадает во что-то.
+	* Слишком быстрые надписи "Miss", "Block", "Reflect"
+	[ DONE! ]
+	
+
+28.10.20
+	sc_deal_damage
+		- перенести гору условий в соответствующие ob_states.
+		[ DONE! ]
+		- в	этом скрипте используется sc_calcualte_damage, откуда тоже надо вытащить код, связанный со статами
+		
+	Добавить в структуру ob_state:
+	events:
+		- before applying (условия из sc_deal_damage)	(OnApply event)
+			  значит ob_state должен быть создан заранее (?) и изначально деактивирован.
+			  Активируется если в before applying все условия выполнены
+		- other state is being applied					(OnOtherApply event) (OnCheckConflict)
+			  часто в before applying (OnApply) стат должен проверить уже наложенные статы на совместимость
+			  (not hardcoded!). Накладываемый стат производит эту проверку через вызов у них этого события.
+	properties:
+		- activated (bool)
+			
+	ob_player
+		//damage_mod				// умножение в sc_calculate_action_damage
+		//range_damage_mod = 1		// превращается в damage_mod в sc_player_attack_set
+		//melee_damage_mod = 1		// -----//------
+		//speed_mod = 0				// прибавление в sc_player_move_set
+		//accuracy_mod = 0			//прибавление в sc_check_accuracy
+		//dodge_mod = 0				//прибавление в sc_check_accuracy
+		Когда добавляли ob_state, не нужно было затрагивать структуру ob_pokemon!
+		Изменять значения должны ob_states. У ob_player каждое событие, происходящее с ним должно 
+		перехватываться наложенными статами...
+			- Движение
+			- Получение урона
+			- Нанесение урона
+		
+	ob_bullet (, ob_attack, ob_damage_area)
+		ev_destroy
+		Снаряд при столкновении не уничтожается	сразу и потом применяет нужный стат, а, до уничтожения,
+		решение о дальнейших действиях принимается с участием кода в имеющихся на тот момент ob_state
+		у цели и у снаряда, и ob_bullet (ob_attack, ob_damage_area). Это необходимо, так как каждый тип атаки
+		ведет себя по-разному например при reflect.
+
+
+31.10.20
+	ob_particle_text
+		- возможна множественная генерация вылетающих сообщений одновременно, например при уроне. 
+		Cделать вылетание в разных направлениях
+		
+	(ob_ui_pokeface)
+	ob_bar_shield
+		- добавить
+		- исчезает при shield = 0 
+		
+	(ob_ui_pokeface)
+	ob_bar
+		- при первом появлении в него записывается изначальное значение как максимальное
+
+
+26.10.22
+	Изменение кода столкновений:
+	
+		Делаю общий компонент cmp_collidable.
+	Каждый объект имеющий его, (ob_player, ob_bullet) изменяет в create event и userEvent0 (init), под себя (маска, размер, кадр)
+	вместо того, чтобы иметь разные компоненты для каждого объекта.
+	
+		Основная функция ob_collidable это создание и перемещение ob_collision_area. 
+	ob_collision_area сделать несколько видов для разных типов столкновений (habitat, hazard, air, buried)
+	Collision_area нужен для того, чтобы столкновения обрабатывались нативно by GameMaker
+
+	ob_coliision_area types:
+		- land (hazard)
+		- air
+		- buried
+		- bullet (?)
+		
+	if ob_collide should fly over ob_collide of same type, they change their solid property = false
+
+	sc_set_coll_areas
+	   changes sprite (and mask) for created ob_collides
+	   
+	Осталось вызывать скрипт привязки ob_collide (sc_set_coll_areas) в нужных местах:
+	 - ob_player -> User 0 (Init), взлет, закапывание, телепортация, other User Events
+	 - ob_bullet
+	 - ob_hazard (?) same as land? hazard is always stops only objs with ob_collide_land
+	 - ob_hab_water (every habitat obj creates its own ob_collide)
+	 
+	 В объектах имеющих ob_collide в User 1 (After collision) прописать изменение solid при необходимости.
+	 Или при Create.
+
+25.01.23
+	Solid = false не меняет поведение при столкновении с объектом solid = true. Они застревают друг в друге.
+	Чтобы не застревали у обоих должен быть solid = false.
+	
+	Нельзя скомпилировать часть проекта, не используя некоторые ресурсы, чтобы запуск был быстрее. Configs для этого не подходят
+
+
+2.02.23
+	ob_collision_line наследуется от ob_collision_area_old(!)
+	Проверка на попадание в Step учитывает все ob_collide(!) не зависимо от position_stage (no matter whether atttack targeted on air, land or buried)
+	
+
+
+21.02.23
+	sc_reach_target в gоведении retreat для покемона с 0-ой скоростью (abra) крашит игру
+
+	_HABITAT (amphibian, water, ground) указывает может ли покемон зарываться и ходить в зарытом состоянии по *воде*.
+	cmp_moving_path должен строить путь согласно _HABITAT
+	ob_hab_water это не просто препятствие с ob_collide_buried! а среда, учитываемая при построении пути в cmp_moving_path

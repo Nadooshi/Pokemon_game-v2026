@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sc_set_behaviour",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sc_set_behaviour",
+  "parent":{
+    "name":"ai",
+    "path":"folders/Scripts/battle/player/ai.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

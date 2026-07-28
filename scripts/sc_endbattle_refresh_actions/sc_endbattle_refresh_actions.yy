@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sc_endbattle_refresh_actions",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sc_endbattle_refresh_actions",
+  "parent":{
+    "name":"endbattle",
+    "path":"folders/Scripts/endbattle.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

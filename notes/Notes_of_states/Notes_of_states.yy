@@ -1,0 +1,11 @@
+{
+  "$GMNotes":"v1",
+  "%Name":"Notes_of_states",
+  "name":"Notes_of_states",
+  "parent":{
+    "name":"state",
+    "path":"folders/Objects/Battle/state.yy",
+  },
+  "resourceType":"GMNotes",
+  "resourceVersion":"2.0",
+}

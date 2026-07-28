@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sc_find_pokemon_to_target",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sc_find_pokemon_to_target",
+  "parent":{
+    "name":"ui",
+    "path":"folders/Scripts/ui.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

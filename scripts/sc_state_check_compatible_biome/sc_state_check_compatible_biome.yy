@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sc_state_check_compatible_biome",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sc_state_check_compatible_biome",
+  "parent":{
+    "name":"battle",
+    "path":"folders/Scripts/battle.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

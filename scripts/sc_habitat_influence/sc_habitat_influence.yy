@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sc_habitat_influence",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sc_habitat_influence",
+  "parent":{
+    "name":"player",
+    "path":"folders/Scripts/battle/player.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

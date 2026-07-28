@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"array_from_string",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"array_from_string",
+  "parent":{
+    "name":"internal",
+    "path":"folders/Scripts/internal.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
