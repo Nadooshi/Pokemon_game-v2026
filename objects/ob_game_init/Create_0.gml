@@ -37,7 +37,7 @@ enum _ELEMENTAL {
 	count    // чтобы узнать количество значений
 }
 
-globalvar elemental_text
+global.elemental_text = undefined;
 var i=0
 elemental_text[i++] = "white"
 elemental_text[i++] = "dark"
@@ -111,7 +111,7 @@ enum _MATERIAL {
 	count    // чтобы узнать количество значений
 }
 
-globalvar material_text
+global.material_text = undefined;
 var i=0
 material_text[i++] = "white"
 material_text[i++] = "dark"
@@ -145,7 +145,7 @@ material_text[i++] = "muddy"
 material_text[i++] = "woody"
 material_text[i++] = "none"
 
-globalvar material_colour
+global.material_colour = undefined;
 var i=0
 
 material_colour[i++] = make_colour_rgb(255,255,255)		//white
@@ -202,7 +202,7 @@ enum _ATTACK_TYPE {
 	pivot		// technical (no state reaction)
 }
 
-globalvar attack_type_text
+global.attack_type_text = undefined;
 var i=0
 attack_type_text[i++] = "melee"
 attack_type_text[i++] = "range"
@@ -223,7 +223,7 @@ enum _ATTACK_AFFECT {
 	itself	= 4,
 }
 
-globalvar attack_affect_text;
+global.attack_affect_text = undefined;
 attack_affect_text[_ATTACK_AFFECT.friend] = "friend"
 attack_affect_text[_ATTACK_AFFECT.enemy ] = "enemy"
 attack_affect_text[_ATTACK_AFFECT.itself] = "itself"
@@ -236,7 +236,7 @@ enum _ATTACK_TG {
 	all			= 7
 }
 
-globalvar attack_target_text;
+global.attack_target_text = undefined;
 attack_target_text[_ATTACK_TG.air	 	]  = "air"
 attack_target_text[_ATTACK_TG.ground	]  = "ground"
 attack_target_text[_ATTACK_TG.underground] = "underground"
@@ -253,7 +253,7 @@ enum _BULLET_PH {
 	piercer,
 	bowl
 }
-globalvar bullet_physic_text
+global.bullet_physic_text = undefined;
 var i = 0
 bullet_physic_text[i++] = "(Custom) Save position"
 bullet_physic_text[i++] = "Blow away by wind"
@@ -313,7 +313,7 @@ enum _ABILITY_STATE {
 	count
 }
 
-globalvar ability_text;
+global.ability_text = undefined;
 i=1
 ability_text[i++] = "incineration"  // горение*
 ability_text[i++] = "burn"          // ожог - шрам*
@@ -357,7 +357,7 @@ ability_text[i++] = "mutual"		//*
 ability_text[i++] = "wreck"			//*
 ability_text[i++] = "barrier"		//*
 
-globalvar state_object;
+global.state_object = undefined;
 for (var i=0; i<_ABILITY_STATE.count-1; i++)
    state_object[i] = noone;
 
@@ -420,7 +420,7 @@ enum _FORCE {
 	incredible
 }
 
-globalvar force_text;
+global.force_text = undefined;
 force_text[_FORCE.paltry	] = "Feeble"
 force_text[_FORCE.frail		] = "Poor"
 force_text[_FORCE.helpless	] = "Fragile"
@@ -432,7 +432,7 @@ force_text[_FORCE.elite		] = "Elite"
 force_text[_FORCE.legendary	] = "Legendary"
 force_text[_FORCE.incredible] = "Incredible"
 
-globalvar coef_force;
+global.coef_force = undefined;
 coef_force[_FORCE.paltry	] = 0.91
 coef_force[_FORCE.frail		] = 0.95 
 coef_force[_FORCE.helpless	] = 0.98 
@@ -444,7 +444,7 @@ coef_force[_FORCE.elite		] = 1.18
 coef_force[_FORCE.legendary	] = 1.25
 coef_force[_FORCE.incredible] = 1.33
 
-globalvar coef_level;
+global.coef_level = undefined;
 coef_level[_FORCE.paltry	] = 0.045
 coef_level[_FORCE.frail		] = 0.043
 coef_level[_FORCE.helpless	] = 0.0418
@@ -456,7 +456,7 @@ coef_level[_FORCE.elite		] = 0.0358
 coef_level[_FORCE.legendary	] = 0.0343
 coef_level[_FORCE.incredible] = 0.032
 
-globalvar coef_lvlup;
+global.coef_lvlup = undefined;
 coef_lvlup[_FORCE.paltry	] = 0.80
 coef_lvlup[_FORCE.frail		] = 0.85 
 coef_lvlup[_FORCE.helpless	] = 0.98 
@@ -477,7 +477,7 @@ enum _SIZE {
 	giant,
 	immobile
 }
-globalvar size_text;
+global.size_text = undefined;
 size_text[_SIZE.tiny	] = "tiny"
 size_text[_SIZE.normal	] = "normal"
 size_text[_SIZE.big		] = "big"
@@ -518,45 +518,47 @@ enum _FALLOUT_TYPE { //вид осадков: дождь снег ...
 	snow, // запрограммировано, но негде использовать
 	ember
 }
-globalvar weather, fallout, is_pmTime;;
+global.weather = undefined;
+global.fallout = undefined;
+global.is_pmTime = undefined;
 weather = irandom_range(1,5)
 fallout = irandom(1)
 is_pmTime = irandom(1)
 
-globalvar part_system_wind;
+global.part_system_wind = undefined;
 part_system_wind = part_system_create()
 #endregion
 //////////////////////////////////
-globalvar trainer_inv_size; trainer_inv_size = 16;
-globalvar previous_room;
+global.trainer_inv_size = undefined;
+global.previous_room = undefined;
 
-globalvar popup_appeared; popup_appeared = false
+global.popup_appeared = undefined;
 
 //////////////////////////////////
 
-globalvar trainer_preset; trainer_preset = sc_new_trainer()
-trainer_preset[? "avatar"]	= irandom(sprite_get_number(sp_trainer_avatar))   // image_index from sp_trainer_avatar
+global.trainer_preset = ds_map_create();
+global.trainer_preset[? "avatar"]	= irandom(sprite_get_number(sp_trainer_avatar))   // image_index from sp_trainer_avatar
 
-globalvar current_trainer;	current_trainer = ds_map_create()
+global.current_trainer = undefined;
 
-globalvar trainer_fnames;	trainer_fnames = []
-globalvar trainer_count;	trainer_count = 0
+global.trainer_fnames = undefined;
+global.trainer_count = undefined;
 
 
 sc_load_trainer_fnames()
 
-globalvar pokemon_path;		pokemon_path = "pokedex.ini"
-globalvar pokemon_list;		pokemon_list = ds_map_create()
-globalvar pokemon_list_count
-globalvar evolution_tree;	evolution_tree = ds_map_create()
+global.pokemon_path = undefined;
+global.pokemon_list = undefined;
+global.pokemon_list_count = undefined;
+global.evolution_tree = undefined;
 
 var _arr = 0
-globalvar element_table;
+global.element_table = undefined;
 element_table = array_create(_ELEMENTAL.count-1)
 for (var i=0; i<array_length_1d(element_table); i++)
 	element_table[i] = array_create(3, _ELEMENTAL.none)
 _arr = 0
-globalvar aura_table;
+global.aura_table = undefined;
 aura_table = array_create(_ELEMENTAL.count-1)
 for (var i=0; i<array_length_1d(aura_table); i++)
 	aura_table[i] = array_create(3, _ELEMENTAL.none)
@@ -593,16 +595,16 @@ ini_open(pokemon_path)
 	}
 ini_close()
 
-globalvar current_pokemon;	current_pokemon = ds_map_create()
+global.current_pokemon = undefined;
 
 //////////////////////////////////
 // saved slots
 
-globalvar action_slot;
-globalvar trainer_slot; 
+global.action_slot = undefined;
+global.trainer_slot = undefined;
 
-globalvar player1_trainer;
-globalvar player2_trainer;
+global.player1_trainer = undefined;
+global.player2_trainer = undefined;
 //globalvar neutral_trainer;
 player1_trainer = noone; //sc_new_trainer()
 player2_trainer = noone; //sc_new_trainer()
@@ -610,9 +612,9 @@ player2_trainer = noone; //sc_new_trainer()
 //neutral_trainer[? "name"] = "Mad pokemon"
 
 
-globalvar log_battle; log_battle = ds_list_create()
-globalvar showing_particle_text; showing_particle_text = true
-globalvar maxchannel;
+global.log_battle = undefined;
+global.showing_particle_text = undefined;
+global.maxchannel = undefined;
 maxchannel = 7
 
 audio_channel_num(maxchannel)

@@ -10,7 +10,7 @@ if view_visible[i] {
 var text_x = clamp(mouse_x, 0, max_x - string_width(hint))
 
 if show_hint
-if hint != "" {
+if string_length(hint) > 0 {
 	draw_set_font(fn_card)
 	draw_set_color(c_black)
 	draw_text(text_x, mouse_y - 54, hint)
