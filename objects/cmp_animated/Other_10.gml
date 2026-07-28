@@ -1,14 +1,14 @@
 /// @desc Init
-var _tags = ""
+var _tags = "";
 
-if sprite_exists(sprite_index) {
-	_tags = string(asset_get_tags(sprite_index, asset_sprite))
-	p_looped = string_pos("loop", _tags) > 0
-	p_4dir   = string_pos("4_dir", _tags) > 0
-	p_stable = string_pos("stab", _tags) > 0
-	p_ray	 = string_pos("ray", _tags) > 0
+if (sprite_exists(sprite_index)) {
+	_tags = string(asset_get_tags(sprite_index, asset_sprite));
+	p_looped = string_pos_ext("loop", _tags, 0) > 0;
+	p_4dir   = string_pos_ext("4_dir", _tags, 0) > 0;
+	p_stable = string_pos_ext("stab", _tags, 0) > 0;
+	p_ray    = string_pos_ext("ray", _tags, 0) > 0;
 	
-	sprite_speed = 1 / (frames_rate / sprite_get_speed(sprite_index))
+	sprite_speed = 1 / (frames_rate / sprite_get_speed(sprite_index));
 }
 
 // normal anim
