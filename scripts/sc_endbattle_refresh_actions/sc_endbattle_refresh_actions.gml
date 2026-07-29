@@ -9,7 +9,7 @@ function sc_endbattle_refresh_actions(){
 	var _name
 	
 	var i = 0
-	ini_open(pokemon_path)
+	ini_open(global.pokemon_path)
 	with ob_frame1 {
 		i = index
 		_name = ds_list_find_value(current_pokemon[? "active_actions"], index)

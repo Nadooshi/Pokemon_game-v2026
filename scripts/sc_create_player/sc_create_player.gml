@@ -32,7 +32,7 @@ function sc_create_player(argument0, argument1) {
 		ds_list_clear(action_list)
 		var a_list = pokemon_map[? "active_actions"]
 		var a_map;
-		ini_open(pokemon_path)
+		ini_open(global.pokemon_path)
 		for (var i=0; i<ds_list_size(a_list); i++) {
 			a_map = undefined
 			if not is_undefined(a_list[| i]) {
