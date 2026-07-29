@@ -8,7 +8,7 @@ if show_question("Really clear all saves?") {
 		directory_destroy("trainer_saves")
 		show_message("save folder cleared")
 	}
-	trainer_count = 0
-	trainer_fnames = []
+	global.trainer_count = 0
+	ds_list_clear(global.trainer_fnames)
 } else 
 	show_message("nothing deleted")

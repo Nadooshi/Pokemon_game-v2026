@@ -541,16 +541,17 @@ global.trainer_preset[? "avatar"]	= irandom(sprite_get_number(sp_trainer_avatar)
 
 global.current_trainer = undefined;
 
-global.trainer_fnames = undefined;
+global.trainer_fnames = array_create(0);
 global.trainer_count = undefined;
 
 
-sc_load_trainer_fnames()
 
 global.pokemon_path = undefined;
-global.pokemon_list = undefined;
+global.pokemon_list = ds_map_create();
 global.pokemon_list_count = undefined;
 global.evolution_tree = undefined;
+
+sc_load_trainer_fnames()
 
 var _arr = 0
 global.element_table = undefined;
@@ -563,21 +564,21 @@ global.aura_table = array_create(_ELEMENTAL.count-1)
 for (var i=0; i<array_length_1d(global.aura_table); i++)
 	global.aura_table[i] = array_create(3, _ELEMENTAL.none)
 
-ini_open(pokemon_path)
-	ds_map_read(pokemon_list, ini_read_string("pokemons", "pokemon_list", ""))
-	pokemon_list_count = ds_map_size(pokemon_list)
+ini_open(global.pokemon_path)
+	ds_map_read(global.pokemon_list, ini_read_string("pokemons", "pokemon_list", ""))
+	global.pokemon_list_count = ds_map_size(global.pokemon_list)
 	// load element table =========================================================
-	for (var i=0; i<array_length_1d(element_table); i++) {
+	for (var i=0; i<array_length_1d(global.element_table); i++) {
 		_arr = array_from_string( ini_read_string("element_table", string(i), "0"))
 		global.element_table[i] = _arr
 	}
-	for (var i=0; i<array_length_1d(aura_table); i++) {
+	for (var i=0; i<array_length_1d(global.aura_table); i++) {
 		_arr = array_from_string( ini_read_string("aura_table", string(i), "0"))
 		global.aura_table[i] = _arr
 	}
 	//=============================================================================
 	
-	var _n = ds_map_find_first(pokemon_list)
+	var _n = ds_map_find_first(global.pokemon_list)
 	var _s = "", e
 	while not is_undefined(_n) {
 		_s = ini_read_string("evolution_tree", _n, "")
@@ -585,13 +586,13 @@ ini_open(pokemon_path)
 			show_message(_n + " has no evolution info!")
 		else {
 			try {
-				evolution_tree[? _n] = json_parse(_s)
+				global.evolution_tree[? _n] = json_parse(_s)
 			} catch(e) {
 				show_message("Evolution info is corrupted for "+_n)
 				//evolution_tree[? _n] = {children: []}
 			} 
 		}
-		_n = ds_map_find_next(pokemon_list, _n);
+		_n = ds_map_find_next(global.pokemon_list, _n);
 	}
 ini_close()
 
@@ -600,8 +601,8 @@ global.current_pokemon = undefined;
 //////////////////////////////////
 // saved slots
 
-global.action_slot = undefined;
-global.trainer_slot = undefined;
+global.action_slot = array_create(0,0);
+global.trainer_slot = array_create(0,0);
 
 global.player1_trainer = undefined;
 global.player2_trainer = undefined;
