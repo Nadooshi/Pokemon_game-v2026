@@ -4,7 +4,7 @@ path_target = instance_create_layer(x, y+12, "Game", ob_hiding_mark)
 path_target.path = path_add()
 
 //instance_deactivate_object(coll_area)
-if sc_does_exist(target) {
+if global.sc_does_exist(target) {
 	tgX = target.x
 	tgY = target.y+12
 } else {

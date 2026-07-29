@@ -13,8 +13,8 @@ with ob_player {
 }
 
 var _trainers = []
-_trainers[0] = player1_trainer
-_trainers[1] = player2_trainer
+_trainers[0] = global.player1_trainer
+_trainers[1] = global.player2_trainer
 
 var p_list_friendly
 var p_list_enemy

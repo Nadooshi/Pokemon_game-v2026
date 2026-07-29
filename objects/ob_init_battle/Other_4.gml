@@ -19,10 +19,10 @@
 
 var _start_area = instance_find(ob_start_area, 0)
 
-var _list = player1_trainer[? "active_pokemon_list"]
-player1_trainer[? "pokemon_ids"] = ds_list_create()
+var _list = global.player1_trainer[? "active_pokemon_list"]
+global.player1_trainer[? "pokemon_ids"] = ds_list_create()
 for (var i=0; i<ds_list_size(_list); i++) 
-with sc_create_player(_list[| i], player1_trainer) {
+with sc_create_player(_list[| i], global.player1_trainer) {
 	while not place_meeting(x, y, ob_start_area) {
 		x = _start_area.bbox_left + random(_start_area.bbox_right  - _start_area.bbox_left)
 		y = _start_area.bbox_top  + random(_start_area.bbox_bottom - _start_area.bbox_top )
@@ -37,15 +37,15 @@ with sc_create_player(_list[| i], player1_trainer) {
 		pokemon_id = other.id
 		break	
 	}
-	ds_list_add(player1_trainer[? "pokemon_ids"], id)
+	ds_list_add(global.player1_trainer[? "pokemon_ids"], id)
 }
 
 var _start_area = instance_find(ob_start_area, 1)
 
-var _list = player2_trainer[? "active_pokemon_list"]
-player2_trainer[? "pokemon_ids"] = ds_list_create()
+var _list = global.player2_trainer[? "active_pokemon_list"]
+global.player2_trainer[? "pokemon_ids"] = ds_list_create()
 for (var i=0; i<ds_list_size(_list); i++) 
-with sc_create_player(_list[| i], player2_trainer) {
+with sc_create_player(_list[| i], global.player2_trainer) {
 	while not place_meeting(x, y, ob_start_area) {
 		x = _start_area.bbox_left + random(_start_area.bbox_right  - _start_area.bbox_left)
 		y = _start_area.bbox_top  + random(_start_area.bbox_bottom - _start_area.bbox_top )
@@ -62,14 +62,14 @@ with sc_create_player(_list[| i], player2_trainer) {
 		pokemon_id = other.id
 		break	
 	}
-	ds_list_add(player2_trainer[? "pokemon_ids"], id)
+	ds_list_add(global.player2_trainer[? "pokemon_ids"], id)
 }
 
 with ob_ui_pokeface_1 
-	list = player1_trainer[? "active_pokemon_list"]
+	list = global.player1_trainer[? "active_pokemon_list"]
 
 with ob_ui_pokeface_2
-	list = player2_trainer[? "active_pokemon_list"]
+	list = global.player2_trainer[? "active_pokemon_list"]
 
 with ob_ui_pokeface
 	event_perform(ev_other, ev_user0)

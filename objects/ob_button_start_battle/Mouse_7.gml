@@ -8,11 +8,11 @@ if not ds_exists(global.player1_trainer, ds_type_map) or
 	show_message("Choose trainer, please!")
 	exit
 }
-//	player2_trainer = sc_new_trainer()
+//	global.player2_trainer = sc_new_trainer()
 
 // reload trainers
-sc_clear_trainer(global.player1_trainer)//; player1_trainer = sc_new_trainer()
-sc_clear_trainer(global.player2_trainer)//; player2_trainer = sc_new_trainer()
+sc_clear_trainer(global.player1_trainer)//; global.player1_trainer = sc_new_trainer()
+sc_clear_trainer(global.player2_trainer)//; global.player2_trainer = sc_new_trainer()
 global.player1_trainer = sc_load_trainer(ob_frame_trainer_1.name)
 global.player2_trainer = sc_load_trainer(ob_frame_trainer_2.name)
 

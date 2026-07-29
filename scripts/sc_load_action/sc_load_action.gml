@@ -30,7 +30,7 @@ function sc_load_action(_name, _pokemon_map){
 	if not is_undefined(map[? "active"]) {
 		var _map_abil = ds_map_create()
 		ds_map_read(_map_abil, ini_read_string("abilities", map[? "active"], ""))
-		if sc_does_exist(_map_abil)
+		if global.sc_does_exist(_map_abil)
 			map[? "active"] = _map_abil
 	}
 	

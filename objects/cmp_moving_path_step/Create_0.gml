@@ -1,6 +1,6 @@
 /// @desc create path
 
-if not sc_does_exist(target) {
+if not global.sc_does_exist(target) {
 	// reset move_component
 	sc_set_move_component(cmp_moving)
 }

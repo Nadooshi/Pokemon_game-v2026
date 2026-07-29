@@ -1,6 +1,6 @@
 /// @arg select = true
 function sc_set_selected(_id, _selected) {
-	if not sc_does_exist(_id)
+	if not global.sc_does_exist(_id)
 		return;
 	with _id {
 		selected = _selected

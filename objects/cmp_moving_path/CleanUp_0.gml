@@ -5,11 +5,11 @@ with path_target {
 	path_delete(path)
 }
 
-if sc_does_exist(path_target) {
+if global.sc_does_exist(path_target) {
 	instance_destroy(path_target)
 }
 
-if sc_does_exist(target) {
+if global.sc_does_exist(target) {
 	tgX = target.x
 	tgY = target.y
 }

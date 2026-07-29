@@ -604,8 +604,8 @@ global.current_pokemon = undefined;
 global.action_slot = array_create(0,0);
 global.trainer_slot = array_create(0,0);
 
-global.player1_trainer = undefined;
-global.player2_trainer = undefined;
+global.player1_trainer = ds_list_create();
+global.player2_trainer = ds_list_create();
 //globalvar neutral_trainer;
 global.player1_trainer = noone; //sc_new_trainer()
 global.player2_trainer = noone; //sc_new_trainer()
