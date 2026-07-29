@@ -1,4 +1,4 @@
 /// @desc
 
-ds_list_destroy(log_battle)
+ds_list_destroy(global.log_battle)
 file_text_close(fname);	

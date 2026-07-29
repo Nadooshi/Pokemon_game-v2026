@@ -7,15 +7,15 @@ with ob_player {
 	
 	// apply room aura
 	if clear_sky
-	if is_pmTime {
+	if global.is_pmTime {
 	if ds_list_find_index(in_biome, _MATERIAL.lunar) = -1
 		ds_list_add(in_biome, _MATERIAL.lunar)
 	} else {
 	if ds_list_find_index(in_biome, _MATERIAL.solar) = -1
 		ds_list_add(in_biome, _MATERIAL.solar)
 	}
-	
-	switch weather {
+
+	switch global.weather {
 		case _WEATHER.foggy:
 		case _WEATHER.cloudy:
 		case _WEATHER.clear:
@@ -25,7 +25,7 @@ with ob_player {
 		case _WEATHER.stormy:
 			clear_sky = false
 	}
-	switch fallout {
+	switch global.fallout {
 		case _FALLOUT_TYPE.rain :{
 			if ds_list_find_index(in_biome, _MATERIAL.water) = -1
 				ds_list_add(in_biome, _MATERIAL.water)

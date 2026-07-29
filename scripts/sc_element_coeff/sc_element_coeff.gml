@@ -1,6 +1,6 @@
 //@desc for aura element
 function sc_element_coeff(_element, _tg_element) {
-	var _table_entry = (_tg_element != _ELEMENTAL.none) ? aura_table[_tg_element] : -1 
+	var _table_entry = (_tg_element != _ELEMENTAL.none) ? global.aura_table[_tg_element] : -1 
 	
 	var _coeff = 1
 	if array_length(_table_entry)=3 {
