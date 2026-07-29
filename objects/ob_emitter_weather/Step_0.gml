@@ -7,14 +7,14 @@ _h = camera_get_view_height(view_camera[0])
 _w = camera_get_view_width(view_camera[0])
 part_system_position(part_sys_weather, _x, _y)
 
-if fallout != _FALLOUT_TYPE.none 
+if global.fallout != _FALLOUT_TYPE.none 
 	part_emitter_region(part_sys_weather, emi_weather, -100, _w + 100, 0, 0, ps_shape_line, ps_distr_linear)
 
 
 
 
 //process cloud
-if weather = _WEATHER.cloudy{
+if global.weather = _WEATHER.cloudy{
 	if ++proc_cnt < frames_rate {
 		for (var i = 0; i < 3; i++) {
 			d_color_tint[i] = (tg_color_tint[i] - c_color_tint[i]) / frames_rate

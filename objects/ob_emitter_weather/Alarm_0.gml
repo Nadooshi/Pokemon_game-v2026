@@ -1,5 +1,5 @@
 /// @desc
-if weather = _WEATHER.cloudy
+if global.weather = _WEATHER.cloudy
 switch mode {
 	case  0 :{// cloud
 		tg_color_tint = [0.599, 0.584, 0.517]

@@ -1,6 +1,6 @@
 /// @desc 
 
-if not sc_does_exist(component_list, ds_type_list, "'component_list' in Step")
+if not global.sc_does_exist(component_list, ds_type_list, "'component_list' in Step")
 	exit
 	
 for (var i=0; i<component_count; i++)

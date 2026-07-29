@@ -11,7 +11,7 @@ function sc_refresh_actions() {
 	var _name = ds_map_find_first(current_pokemon[? "actions"])
 	var _count = 0
 	var _map
-	ini_open(pokemon_path)
+	ini_open(global.pokemon_path)
 	while not is_undefined(_name) {
 		_map = ds_map_create()
 		ds_map_read(_map, ini_read_string("actions", _name, ""))
@@ -28,7 +28,7 @@ function sc_refresh_actions() {
 	// create scrollable list of avaliable actions
 	var _count = 0
 	var _action
-	ini_open(pokemon_path)
+	ini_open(global.pokemon_path)
 	while (_count < ds_list_size(_all_actions)) {
 		_action = _all_actions[| _count]
 		with sc_add_slot_composed(3200 + 64, 8+92*_count, _action[? "name"], action_slot, undefined) {
@@ -37,7 +37,7 @@ function sc_refresh_actions() {
 			if not is_undefined(map[? "active"]) {
 				var _map_abil = ds_map_create()
 				ds_map_read(_map_abil, ini_read_string("abilities", map[? "active"], ""))
-				if sc_does_exist(_map_abil, undefined, "'_map_abil' in sc_refresh_actions")
+				if global.sc_does_exist(_map_abil, undefined, "'_map_abil' in sc_refresh_actions")
 					map[? "active"] = _map_abil
 			}
 			// set ui properties

@@ -2,7 +2,7 @@
 
 #macro COLL_CHECK_STEP 16
 
-if sc_does_exist(text)
+if global.sc_does_exist(text)
 	instance_destroy(text)
 
 var _a = point_direction(oX, oY-_z, x, y)

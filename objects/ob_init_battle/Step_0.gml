@@ -15,7 +15,7 @@ if not is_undefined(selected_id) and instance_exists(selected_id) {
 	ds_list_add(watching, ob_cursor)
 } else
 with ob_player
-if trainer = player1_trainer
+if trainer = global.player1_trainer
 	ds_list_add(other.watching, id)
 
 

@@ -23,7 +23,7 @@ for (var n=0; n<ds_list_size(current_trainer[? "caught_pokemon_list"]); n++)
 sc_save_trainer()
 
 
-sc_clear_trainer(player1_trainer); player1_trainer = noone
-sc_clear_trainer(player2_trainer); player2_trainer = noone
+sc_clear_trainer(global.player1_trainer); global.player1_trainer = noone
+sc_clear_trainer(global.player2_trainer); global.player2_trainer = noone
 
 room_restart()

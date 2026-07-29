@@ -3,7 +3,7 @@
 if async_load[? "id"] = msg
 if async_load[? "status"] {
 	value_str = async_load[? "result"]
-	if parameter_name != "" {
+	if string_length(parameter_name) > 0 {
 		if string_digits(value_str)=""
 			value_int = 0
 		else

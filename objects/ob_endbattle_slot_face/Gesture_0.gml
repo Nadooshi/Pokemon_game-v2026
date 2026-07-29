@@ -2,7 +2,7 @@
 // map = trainer
 
 current_pokemon = ds_list_find_value(map[? parameter_name], index)
-if not sc_does_exist(current_pokemon)
+if not global.sc_does_exist(current_pokemon)
 	exit;
 
 with ob_frame_pokemon {

@@ -7,7 +7,7 @@ function sc_load_pokemon_dex(argument0, argument1) {
 	var _name = argument0
 	var _ds = argument1
 	if ds_exists(_ds, ds_type_map) {
-		ini_open(pokemon_path)
+		ini_open(global.pokemon_path)
 			ds_map_read(_ds, ini_read_string("pokemons", _name , ""))
 			//_ds[? "title"] = sc_remove_hashtag(_ds[? "title"])
 			var _map = ds_map_create()

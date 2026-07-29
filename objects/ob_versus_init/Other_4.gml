@@ -21,13 +21,13 @@ with ob_frame { // index in ob_frame here is layer_id
 	visible = false
 }
 
-var _c = ds_list_size(player1_trainer[? "active_pokemon_list"])
+var _c = ds_list_size(global.player1_trainer[? "active_pokemon_list"])
 var _map = noone
 var _sz = 0
 var _scale = 1
 var _obj = noone
 for (var i=0; i<_c; i++) {
-	_map = player1_trainer[? "active_pokemon_list"][| i]
+	_map = global.player1_trainer[? "active_pokemon_list"][| i]
 	_sz = _map[? "size"]
 	_obj = frames[? ob_frame1][? _sz][i]
 	if instance_exists(_obj) {
@@ -44,12 +44,12 @@ for (var i=0; i<_c; i++) {
 	}
 }
 
-var _c = ds_list_size(player2_trainer[? "active_pokemon_list"])
+var _c = ds_list_size(global.player2_trainer[? "active_pokemon_list"])
 var _map = noone
 var _sz = 0
 var _scale = 1
 for (var i=0; i<_c; i++) {
-	_map = player2_trainer[? "active_pokemon_list"][| i]
+	_map = global.player2_trainer[? "active_pokemon_list"][| i]
 	_sz = _map[? "size"]
 	_obj = frames[? ob_frame][? _sz][i]
 	if instance_exists(_obj) {

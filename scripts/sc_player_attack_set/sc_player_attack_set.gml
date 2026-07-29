@@ -6,7 +6,7 @@ function sc_player_attack_set() {
 	var _a_map = action_list[| doActionNum]
 	_a_map[? "num"] = doActionNum
 
-	if not sc_does_exist(_a_map, ds_type_map) exit
+	if not global.sc_does_exist(_a_map, ds_type_map) exit
 	sc_canMove(false)
 
 	switch (_a_map[? "type"]) {
@@ -190,7 +190,7 @@ function sc_player_attack_set() {
 			var _val_txt = "looking forward to revenge by " + string(_newdmg) +"."
 			sc_logging_state_cursed(
 				id,
-				sc_does_exist(_a_map[? "active"]) ? _a_map[? "active"][? "name"]: "No active ability",
+				global.sc_does_exist(_a_map[? "active"]) ? _a_map[? "active"][? "name"]: "No active ability",
 				_val_txt
 			)
 		}

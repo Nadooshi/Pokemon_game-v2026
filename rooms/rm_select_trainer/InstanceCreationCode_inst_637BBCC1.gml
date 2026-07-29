@@ -1,1 +1,1 @@
-map = trainer_preset
+map = global.trainer_preset

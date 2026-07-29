@@ -3,8 +3,8 @@
 
 event_perform_object(ob_ui_object, ev_other, ev_user0)
 
-if parameter_name != "" 
-if sc_does_exist(map, undefined, "'map' in User0") {
+if string_length(parameter_name) > 0 
+if global.sc_does_exist(map, undefined, "'map' in User0") {
 	var _pokemon = ds_list_find_value(map[? parameter_name], index)
 	if not is_undefined(_pokemon) {
 		image_index = _pokemon[? "face"] + 0.01

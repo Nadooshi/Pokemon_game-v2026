@@ -4,7 +4,7 @@ if not variable_instance_exists(id, "component_count") {
 	component_list = ds_list_create()
 }
 
-if not sc_does_exist(component_list, ds_type_list, "component_list in Create")
+if not global.sc_does_exist(component_list, ds_type_list, "component_list in Create")
 	exit
 	
 for (var i=0; i<component_count; i++)

@@ -12,8 +12,8 @@ function array_from_string() {
 	var _p = string_pos_ext(_sep, _str, 0);
 
 	while (_p > 0) {
-		_result[_index] = real(string_substring(_str, 0, _p));
-		_str = string_substring(_str, _p + string_length(_sep), string_length(_str));
+		_result[_index] = real(string_copy(_str, 0, _p));
+		_str = string_copy(_str, _p + string_length(_sep), string_length(_str));
 		_p = string_pos_ext(_sep, _str, 0);
 		_index++;
 	}

@@ -100,7 +100,7 @@ function sc_apply_state() {
 			}
 			
 			pokemon_id_attack = _pokemon_id_attack; // атакующий
-			if sc_does_exist(_action)
+			if global.sc_does_exist(_action)
 			if not is_undefined(_action)
 			if ds_exists(_action, ds_type_map) {
 				name = ds_map_find_value(_action[? "active"], "name");

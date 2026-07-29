@@ -29,7 +29,7 @@ with ob_slot_icon {
 	// should be like this
 	event_perform(ev_other, ev_user0) // update
 	if not is_undefined(map) and ds_exists(map, ds_type_map)
-	if not (is_undefined(map[? "face"]) or (map[? "face"] == ""))
+	if not (is_undefined(map[? "face"]) or (string_length(map[? "face"]) = 0))
 		image_index = map[? "face"]
 }
 */

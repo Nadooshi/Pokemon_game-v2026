@@ -44,7 +44,7 @@ function sc_passiv_animation_set(animation, att_main, att_state, att_bio, check_
 	if check_bio = 0 check_bio = "Confirmed"
 	if check_bio = 1 check_bio = "Cancel"
 	
-	if animation != "" {
+	if string_length(animation) > 0 {
 		skeleton_attachment_set("shadow_state",att_main)
 		skeleton_attachment_set("state", att_main)
 		skeleton_attachment_set("term_state", att_state)

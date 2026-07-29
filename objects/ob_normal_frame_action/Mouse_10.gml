@@ -2,7 +2,7 @@
 
 // Inherit the parent event
 event_inherited();
-if not sc_does_exist(map) or not sc_does_exist(current_pokemon) {
+if not global.sc_does_exist(map) or not global.sc_does_exist(current_pokemon) {
 	hint = ""
 	exit
 }

@@ -1,11 +1,11 @@
 /// @desc  Common collision code
 
-if not sc_does_exist(parent, undefined, "'parent' in User0") {
+if not global.sc_does_exist(parent, undefined, "'parent' in User0") {
 	noParent = true
 	instance_destroy()
 	exit
 }
-if not sc_does_exist(other.parent, undefined, "'other.parent' in User0")
+if not global.sc_does_exist(other.parent, undefined, "'other.parent' in User0")
 	exit
 
 other.parent.collided_with = parent

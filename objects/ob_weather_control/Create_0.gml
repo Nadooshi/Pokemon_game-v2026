@@ -5,7 +5,7 @@ wind_dir = random(360)
 wind_d_dir = 0
 wind_period = 1
 caption = "X - m/s"
-switch weather {
+switch global.weather {
 	case _WEATHER.none:
 	case  _WEATHER.foggy: {
 		max_wind_power = 0
