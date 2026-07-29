@@ -10,8 +10,8 @@ part_type_life(part_leaf_blow, 30, 90)
 part_type_orientation(part_leaf_blow, 0, 360, 5, 0, false)
 part_type_color1(part_leaf_blow, color)
 
-part_wind_emitter = part_emitter_create(part_system_wind)
-part_emitter_stream(part_system_wind, part_wind_emitter, part_leaf_blow, -5)
+part_wind_emitter = part_emitter_create(global.part_system_wind)
+part_emitter_stream(global.part_system_wind, global.part_wind_emitter, part_leaf_blow, -5)
 
 alarm_set(1, frames_rate * (3 + random(5)))
 
