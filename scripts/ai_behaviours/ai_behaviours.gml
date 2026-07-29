@@ -141,7 +141,7 @@ function sc_ai_follow_target() {
 	var _lungeCount = ds_list_size(att_list[_ATTACK_PURPOSE.move])
 	if _lungeCount > 0 {  // canLunge
 		var _att_num = irandom(_lungeCount-1)
-		var _lunge_num = att_list[_ATTACK_PURPOSE.move][| _att_num]
+		_lunge_num = att_list[_ATTACK_PURPOSE.move][| _att_num]
 		var _lunge_d =  action_list[| _lunge_num][? "distance"]
 		if ds_list_find_index(att_tgFroms[position_stage], _lunge_num) = -1
 			_lunge_num = -1
