@@ -546,7 +546,7 @@ global.trainer_count = undefined;
 
 
 
-global.pokemon_path = undefined;
+global.pokemon_path = undefined; global.pokemon_path ="pokedex.ini";
 global.pokemon_list = ds_map_create();
 global.pokemon_list_count = undefined;
 global.evolution_tree = undefined;

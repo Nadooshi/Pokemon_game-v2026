@@ -44,7 +44,7 @@ function sc_create_player(_map, _trainer) {
         var _action_list = pokemon_map[? "active_actions"];
         var _action_map;
         
-        if ini_open(pokemon_path) {
+        if ini_open(global.pokemon_path) {
             for (var i = 0; i < ds_list_size(_action_list); i++) {
                 _action_map = undefined;
                 
@@ -60,7 +60,7 @@ function sc_create_player(_map, _trainer) {
             }
             ini_close();
         } else {
-            show_message("ERROR: Could not open pokemon ini file: " + string(pokemon_path));
+            show_message("ERROR: Could not open pokemon ini file: " + string(global.pokemon_path));
         }
         
         // === Загрузка пассивных способностей ===

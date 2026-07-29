@@ -1,8 +1,8 @@
 /// @desc
-layer_set_visible("Effect_daytime", is_pmTime)
+layer_set_visible("Effect_daytime", global.is_pmTime)
 
 // set param filter cloud
-switch weather {
+switch global.weather {
 	case _WEATHER.clear: {
 		c_color_tint = [1, 1, 1]
 		break;
@@ -33,7 +33,7 @@ event_perform(ev_other, ev_user0) // init particles
 
 var p_count = 0
 var p_type = undefined
-switch weather {
+switch global.weather {
 	case _WEATHER.foggy: {
 		repeat (10){
 			var _x = 200 + (random(room_width) - 200)
@@ -60,7 +60,7 @@ switch weather {
 }
 
 
-switch fallout {
+switch global.fallout {
 	case _FALLOUT_TYPE.rain :{
 		p_type = part_rain
 		sc_play_sound(snd_rain, true, 1, 0.75)
